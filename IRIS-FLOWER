@@ -1,0 +1,59 @@
+import numpy as np
+import pandas as pd
+data = pd.read_csv("/content/iris.csv");
+
+data.head()
+
+
+data.sample(10)
+
+
+data.columns
+
+
+print(data)
+
+
+
+print(data[10:21])
+sliced_data=data[10:21]
+print(sliced_data)
+
+
+
+specific_data=data[["Id","Species"]]
+print(specific_data.head(10))
+
+
+
+
+data.iloc[5]
+#it will display records only with species "Iris-setosa".
+data.loc[data["Species"] == "Iris-setosa"]
+
+
+data["Species"].value_counts()
+
+
+sum_data = data["SepalLengthCm"].sum()
+mean_data = data["SepalLengthCm"].mean()
+median_data = data["SepalLengthCm"].median()
+
+print("Sum:",sum_data, "\nMean:", mean_data, "\nMedian:",median_data)
+
+min_data=data["SepalLengthCm"].min()
+max_data=data["SepalLengthCm"].max()
+
+print("Minimum:",min_data, "\nMaximum:", max_data)
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+g = sns.pairplot(data,hue="Species")
+
+
+
+
+
+
+
